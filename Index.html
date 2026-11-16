@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christmas Party Vivarini</title>
+<style>
+:root{
+--green:#1E5631;
+--red:#B22222;
+--gold:#D4AF37;
+--bg:#FFF8F0;
+}
+*{
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+margin:0;
+background:var(--bg);
+color:#333;
+}
+header{
+background:linear-gradient(135deg,var(--green),var(--red));
+color:white;
+padding:25px;
+text-align:center;
+}
+header h1{
+margin:0;
+font-size:2rem;
+}
+.container{
+max-width:900px;
+margin:auto;
+padding:15px;
+}
+.card{
+background:white;
+border-radius:12px;
+padding:18px;
+margin-bottom:16px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+h2{
+color:var(--green);
+margin-top:0;
+}
+input,
+select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:8px;
+}
+button{
+background:var(--green);
+color:white;
+border:none;
+padding:12px 16px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+button:hover{
+opacity:.9;
+}
+.item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+.badge{
+background:#f2f2f2;
+padding:4px 8px;
+border-radius:20px;
+font-size:.8rem;
+}
+.warning{
+background:#fff4e5;
+color:#a15c00;
+padding:12px;
+border-radius:8px;
+margin-bottom:8px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🎄 Christmas Party Vivarini</h1>
+<p>11 Dicembre 2026 • Ore 20:30</p>
+<p>📍 Via Privata Vivarini 5</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>Benvenuti</h2>
+<p>
+Porta quello che puoi e che ti fa piacere condividere.
+Per evitare doppioni organizziamoci insieme.
+</p>
+</div>
+<div class="card">
+<h2>Presenze</h2>
+<input id="nome" placeholder="Nome e Cognome">
+<input id="adulti" type="number" min="1" value="1" placeholder="Adulti">
+<input id="bambini" type="number" min="0" value="0" placeholder="Bambini">
+<button onclick="alert('Versione Firebase da collegare nel prossimo passaggio')">
+Conferma presenza
+</button>
+<br><br>
+<div class="badge">
+Obiettivo: 18 adulti
+</div>
+</div>
+<div class="card">
+<h2>Filtri</h2>
+<button>Tutte</button>
+<button>Solo libere</button>
+<button>Già prenotate</button>
+<br><br>
+<input placeholder="🔍 Cerca invitato">
+</div>
+<div class="card">
+<h2>🥨 Salato</h2>
+<div class="item">
+<span>Tagliere salumi</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Tagliere formaggi</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Focaccia farcita</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Torta salata</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Tramezzini assortiti</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>🍳 Piatti fatti in casa</h2>
+<div class="item">
+<span>Lasagne</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Parmigiana</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Polpette</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Ricetta libera</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>🍰 Dolci</h2>
+<div class="item">
+<span>Panettone</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Pandoro</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Torta fatta in casa</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>🥤 Analcolici</h2>
+<div class="item">
+<span>Coca Cola</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Coca Cola Zero</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Aranciata</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Succhi di frutta</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>🍷 Bevande per adulti</h2>
+<div class="item">
+<span>Prosecco</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Vino rosso</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Vino bianco</span>
+<button>Lo porto io</button>
+</div>
+<div class="item">
+<span>Birra</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>📦 Materiali utili</h2>
+<p>
+✅ Acqua fornita dall'organizzatore<br>
+✅ Piatti forniti dall'organizzatore<br>
+✅ Bicchieri forniti dall'organizzatore<br>
+✅ Tovaglioli forniti dall'organizzatore
+</p>
+<div class="item">
+<span>Ghiaccio</span>
+<button>Lo porto io</button>
+</div>
+</div>
+<div class="card">
+<h2>📢 Suggerimenti</h2>
+<div class="warning">
+Controllare che siano presenti abbastanza bevande analcoliche.
+</div>
+<div class="warning">
+Verificare l'equilibrio tra dolci e salato.
+</div>
+</div>
+</div>
+</body>
+</html>
