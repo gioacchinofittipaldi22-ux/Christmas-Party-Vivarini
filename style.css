@@ -601,3 +601,9 @@ button:focus-visible {
 }
 
 
+
+
+/* ---------- LISTA ISCRITTI ---------- */
+.guest-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.guest-list-item { padding: 14px 16px; border: 1px solid #e8eee8; border-left: 4px solid var(--green); border-radius: 12px; background: #fbfdfb; }
+.guest-list-item strong { color: var(--green-dark); }
