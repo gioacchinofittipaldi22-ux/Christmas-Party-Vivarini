@@ -246,44 +246,41 @@ async function saveAttendance() {
   }
 }
 
-// ---------- TOTALI PRESENZE ----------
+// ---------- TOTALI E LISTA ISCRITTI ----------
+
+const attendeesList = document.getElementById("attendeesList");
 
 onSnapshot(collection(db, "attendees"), snapshot => {
   let adults = 0;
   let children = 0;
-  let guests = 0;
+  const attendees = [];
 
   snapshot.forEach(attendee => {
     const data = attendee.data();
-
     adults += Number(data.adults) || 0;
     children += Number(data.children) || 0;
-    guests++;
+    attendees.push({ name: clean(data.name) || "Nome non disponibile" });
   });
 
   document.getElementById("stats").innerHTML = `
     <div class="stats-grid">
-      <div class="stat">
-        <div class="stat-number">${adults}</div>
-        Adulti
-      </div>
-
-      <div class="stat">
-        <div class="stat-number">${children}</div>
-        Bambini
-      </div>
-
-      <div class="stat">
-        <div class="stat-number">${adults + children}</div>
-        Totale persone
-      </div>
-
-      <div class="stat">
-        <div class="stat-number">${guests}</div>
-        Prenotazioni
-      </div>
+      <div class="stat"><div class="stat-number">${adults}</div>Adulti</div>
+      <div class="stat"><div class="stat-number">${children}</div>Bambini</div>
+      <div class="stat"><div class="stat-number">${adults + children}</div>Totale persone</div>
+      <div class="stat"><div class="stat-number">${attendees.length}</div>Prenotazioni</div>
     </div>
   `;
+
+  attendees.sort((a, b) => a.name.localeCompare(b.name, "it"));
+
+  attendeesList.innerHTML = attendees.length
+    ? `<ul class="guest-list">${attendees.map(({name}) => `
+        <li class="guest-list-item"><strong>${escapeHTML(name)}</strong></li>
+      `).join("")}</ul>`
+    : '<div class="empty-list">Non ci sono ancora iscrizioni. Sarai il primo?</div>';
+}, error => {
+  console.error("Errore caricamento iscritti:", error);
+  attendeesList.textContent = "Non è stato possibile caricare la lista degli iscritti. Riprova più tardi.";
 });
 
 // ---------- FILTRI ----------
